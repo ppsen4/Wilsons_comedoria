@@ -1,4 +1,3 @@
-// Função para calcular o total dos itens selecionados
 function calculateTotal(items) {
     return items.reduce((total, item) => total + (item.price * item.quantity), 0);
 }
@@ -6,10 +5,10 @@ function calculateTotal(items) {
 // Função para coletar os itens selecionados
 function getSelectedItems() {
     const items = [];
-    const containers = document.querySelectorAll('.container, .container2');
+    const containers = document.querySelectorAll('.container');
     containers.forEach(container => {
-        const checkboxes = container.querySelectorAll('input[type="checkbox"]:checked');
-        checkboxes.forEach(checkbox => {
+        const checkbox = container.querySelector('input[type="checkbox"]:checked');
+        if (checkbox) {
             const itemId = checkbox.id.replace('item', '');
             const quantityInput = container.querySelector(`#quantity${itemId}`);
             const quantity = parseInt(quantityInput?.value || 0);
@@ -18,7 +17,7 @@ function getSelectedItems() {
                 price: parseFloat(checkbox.getAttribute('data-price')),
                 quantity: quantity
             });
-        });
+        }
     });
     return items;
 }
@@ -72,10 +71,29 @@ function redoOrder() {
     updateTotalPrice();
 }
 
-// Adicionar eventos aos checkboxes e inputs de quantidade
-document.querySelectorAll('.container input[type="checkbox"], .container2 input[type="checkbox"]').forEach(checkbox => {
+// Função para verificar o status do restaurante
+function checkOpeningStatus() {
+    const now = new Date();
+    const hour = now.getHours();
+    const statusElement = document.getElementById('status');
+
+    if (hour >= 9 && hour < 19) { // Supondo que o restaurante funciona das 9h às 19h
+        statusElement.textContent = "Aberto";
+        statusElement.classList.add('aberto');
+        statusElement.classList.remove('fechado');
+    } else {
+        statusElement.textContent = "Fechado";
+        statusElement.classList.add('fechado');
+        statusElement.classList.remove('aberto');
+    }
+}
+
+// Configurar eventos e inicializações
+document.getElementById('submitBtn').addEventListener('click', sendOrder);
+document.getElementById('redoBtn').addEventListener('click', redoOrder);
+document.querySelectorAll('.container input[type="checkbox"]').forEach(checkbox => {
     checkbox.addEventListener('change', function () {
-        const container = checkbox.closest('.container, .container2');
+        const container = checkbox.closest('.container');
         const itemId = this.id.replace('item', '');
         const quantityInput = container.querySelector(`#quantity${itemId}`);
         if (this.checked) {
@@ -87,28 +105,12 @@ document.querySelectorAll('.container input[type="checkbox"], .container2 input[
         updateTotalPrice();
     });
 });
-
-document.querySelectorAll('.container input[type="number"], .container2 input[type="number"]').forEach(input => {
+document.querySelectorAll('.container input[type="number"]').forEach(input => {
     input.addEventListener('input', function () {
         updateTotalPrice();
     });
 });
 
-// Função para verificar se o restaurante está aberto
-function checkOpeningStatus() {
-    const now = new Date();
-    const hour = now.getHours();
-    const statusElement = document.getElementById('status');
-
-    if (hour >= 9 && hour < 19) { // Supondo que o restaurante funciona das 9h às 19h
-        statusElement.textContent = "Status: Aberto";
-    } else {
-        statusElement.textContent = "Status: Fechado";
-    }
-}
-
-// Atualiza o valor total inicial e verifica o status de funcionamento
-document.getElementById('submitBtn').addEventListener('click', sendOrder);
-document.getElementById('redoBtn').addEventListener('click', redoOrder);
+// Atualizar o status e o preço ao carregar a página
 updateTotalPrice();
 checkOpeningStatus();
