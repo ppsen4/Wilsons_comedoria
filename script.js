@@ -1,3 +1,4 @@
+// Função para calcular o total dos itens selecionados
 function calculateTotal(items) {
     return items.reduce((total, item) => total + (item.price * item.quantity), 0);
 }
