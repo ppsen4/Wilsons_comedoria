@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wilson's Comedorias</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+     
+    <header class="header">
+        <!-- Logo no lado esquerdo -->
+        <div class="logo">
+           
+        </div>
+
+        <!-- Links no lado direito -->
+        <nav class="nav">
+            <ul class="nav-links">
+                <li><a href="combos.html"><b>Combos</b></a></li>
+                <li><a href="promocoes.html"><b>Promoções</b></a></li>
+                <li><a href="#footer"><b>Sobre</b></a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="chamada-destaque">
+        <div class="conteudo-chamada">
+            <p id="status">Status: Carregando...</p>
+        </div>
+    </section>
+    
+    <div class="container">
+        <h3>Seu Pedido</h3>
+        <div class="pedido-container">
+            <!-- Div para exibir os itens do pedido à esquerda -->
+            <div class="pedido">
+                <div class="item">
+                    <label>
+                        <input type="checkbox" id="item1" data-price="10.00">
+                        <span>Hamburguer - R$10,00</span>
+                    </label>
+                    <input type="number" id="quantity1" min="1" value="1" style="width: 50px;" disabled>
+                    <img src="img/hamburguer.jpg" alt="">
+                    <div class="total-individual" id="totalItem1">Total: R$0.00</div> <!-- Subtotal individual -->
+                </div>
+                <div class="item">
+                    <label>
+                        <input type="checkbox" id="item2" data-price="15.00">
+                        <span>Pizza - R$15,00</span>
+                    </label>
+                    <input type="number" id="quantity2" min="1" value="1" style="width: 50px;" disabled>
+                    <img src="img/pizza.jpg" alt="">
+                    <div class="total-individual" id="totalItem2">Total: R$0.00</div> <!-- Subtotal individual -->
+                </div>
+                <div class="item">
+                    <label>
+                        <input type="checkbox" id="item3" data-price="20.00">
+                        <span>Sushi - R$20,00</span>
+                    </label>
+                    <input type="number" id="quantity3" min="1" value="1" style="width: 50px;" disabled>
+                    <img src="img/sushi.png" alt="">
+                    <div class="total-individual" id="totalItem3">Total: R$0.00</div> <!-- Subtotal individual -->
+                </div>
+            </div>
+            <!-- Div para exibir os itens do pedido à direita -->
+            <div class="pedido-direita">
+                <div class="item">
+                    <label>
+                        <input type="checkbox" id="item4" data-price="8.00">
+                        <span>Batata Frita - R$8,00</span>
+                    </label>
+                    <input type="number" id="quantity4" min="1" value="1" style="width: 50px;" disabled>
+                    <img src="img/batata.webp" alt="">
+                    <div class="total-individual" id="totalItem4">Total: R$0.00</div> <!-- Subtotal individual -->
+                </div>
+                <div class="item">
+                    <label>
+                        <input type="checkbox" id="item5" data-price="7.00">
+                        <span>Salada - R$7,00</span>
+                    </label>
+                    <input type="number" id="quantity5" min="1" value="1" style="width: 50px;" disabled>
+                    <img src="img/salada.webp" alt="">
+                    <div class="total-individual" id="totalItem5">Total: R$0.00</div> <!-- Subtotal individual -->
+                </div>
+                <div class="item">
+                    <label>
+                        <input type="checkbox" id="item6" data-price="12.00">
+                        <span>Dogão - R$12,00</span>
+                    </label>
+                    <input type="number" id="quantity6" min="1" value="1" style="width: 50px;" disabled>
+                    <img src="img/dogão.webp" alt="">
+                    <div class="total-individual" id="totalItem6">Total: R$0.00</div> <!-- Subtotal individual -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container2">
+        <h3>Seu Pedido</h3>
+        <div class="pedido-container">
+            <!-- Div para exibir os itens do pedido à esquerda -->
+            <div class="pedido">
+                <div class="item">
+                    <label>
+                        <input type="checkbox" id="item1" data-price="10.00">
+                        <span>Hamburguer - R$10,00</span>
+                    </label>
+                    <input type="number" id="quantity1" min="1" value="1" style="width: 50px;" disabled>
+                    <img src="img/hamburguer.jpg" alt="">
+                    <div class="total-individual" id="totalItem1">Total: R$0.00</div> <!-- Subtotal individual -->
+                </div>
+                <div class="item">
+                    <label>
+                        <input type="checkbox" id="item2" data-price="15.00">
+                        <span>Pizza - R$15,00</span>
+                    </label>
+                    <input type="number" id="quantity2" min="1" value="1" style="width: 50px;" disabled>
+                    <img src="img/pizza.jpg" alt="">
+                    <div class="total-individual" id="totalItem2">Total: R$0.00</div> <!-- Subtotal individual -->
+                </div>
+                <div class="item">
+                    <label>
+                        <input type="checkbox" id="item3" data-price="20.00">
+                        <span>Sushi - R$20,00</span>
+                    </label>
+                    <input type="number" id="quantity3" min="1" value="1" style="width: 50px;" disabled>
+                    <img src="img/sushi.png" alt="">
+                    <div class="total-individual" id="totalItem3">Total: R$0.00</div> <!-- Subtotal individual -->
+                </div>
+            </div>
+            <!-- Div para exibir os itens do pedido à direita -->
+            <div class="pedido-direita">
+                <div class="item">
+                    <label>
+                        <input type="checkbox" id="item4" data-price="8.00">
+                        <span>Batata Frita - R$8,00</span>
+                    </label>
+                    <input type="number" id="quantity4" min="1" value="1" style="width: 50px;" disabled>
+                    <img src="img/batata.webp" alt="">
+                    <div class="total-individual" id="totalItem4">Total: R$0.00</div> <!-- Subtotal individual -->
+                </div>
+                <div class="item">
+                    <label>
+                        <input type="checkbox" id="item5" data-price="7.00">
+                        <span>Salada - R$7,00</span>
+                    </label>
+                    <input type="number" id="quantity5" min="1" value="1" style="width: 50px;" disabled>
+                    <img src="img/salada.webp" alt="">
+                    <div class="total-individual" id="totalItem5">Total: R$0.00</div> <!-- Subtotal individual -->
+                </div>
+                <div class="item">
+                    <label>
+                        <input type="checkbox" id="item6" data-price="12.00">
+                        <span>Dogão - R$12,00</span>
+                    </label>
+                    <input type="number" id="quantity6" min="1" value="1" style="width: 50px;" disabled>
+                    <img src="img/dogão.webp" alt="">
+                    <div class="total-individual" id="totalItem6">Total: R$0.00</div> <!-- Subtotal individual -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+            <!-- Div para informações do pedido -->
+       
+    <div class="informacoes-pedido">
+        <h3>Informações do Pedido</h3>
+
+        <h4>Preencha suas informações:</h4>
+        <div>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" placeholder="Seu nome">
+
+            <label for="local">Local:</label>
+            <input type="text" id="local" placeholder="Seu endereço">
+
+            <label for="payment">Forma de pagamento:</label>
+            <select id="payment">
+                <option value="dinheiro">Dinheiro</option>
+                <option value="cartao">Cartão</option>
+                <option value="pix">PIX</option>
+            </select>
+        </div>
+
+        <!-- Aqui está o valor total do pedido -->
+        <div id="totalPedidoFinal">
+            Valor Total do Pedido: R$0.00
+        </div>
+
+        <button id="submitBtn">Finalizar Pedido</button>
+        <button id="redoBtn">Refazer Pedido</button>
+        </div>
+          
+        <footer id="footer" class="footer">
+            <div class="footer-container">
+                <div class="localizacao">
+                    <h4>Nosso Endereço</h4>
+                    <p>Calçadão José Bonifácio, n° 426 📌📌 Itapetininga, São Paulo - SP</p>
+                </div>
+                <div class="contato">
+                    <h4>WhatsApp:</h4>
+                    <a href="tel:+5515998513785" target="_blank">
+                        <img src="img/WhatsApp-icone-3.png" alt="WhatsApp" style="width: 25px;"> WhatsApp
+                    </a>
+                </div>
+                <div class="redes-sociais">
+                    <h4>Siga-nos no</h4>
+                    <a href="https://www.instagram.com/willsonscomedoria/" target="_blank">
+                        <img src="img/3955024.png" alt="Instagram" style="width: 25px;"> Instagram
+                    </a>
+                </div>
+            </div>
+        </footer>
+        
+        
+    <script src="script.js"></script>
+</body>
+</html>
